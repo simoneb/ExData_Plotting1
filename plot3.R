@@ -11,7 +11,10 @@ my.plot.data <- subset(my.plot.data,
                        Date >= as.Date("2007-02-01") 
                        & Date <= as.Date("2007-02-02"))
 
-png(filename = "plot3.png", width = 480, height = 480)
+png(filename = "plot3.png", 
+    width = 480, 
+    height = 480,
+    bg = "transparent")
 
 Sys.setlocale("LC_ALL", "English")
 
@@ -25,6 +28,6 @@ with(my.plot.data, {
 legend("topright", 
        c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
        lwd = 1,
-       col = c("black", "blue","red")) 
+       col = c("black", "red","blue")) 
 
 dev.off()

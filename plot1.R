@@ -11,11 +11,15 @@ my.plot.data <- subset(my.plot.data,
                        Date >= as.Date("2007-02-01") 
                        & Date <= as.Date("2007-02-02"))
 
-png(filename = "plot1.png", width = 480, height = 480)
+png(filename = "plot1.png", 
+    width = 480, 
+    height = 480,
+    bg = "transparent")
 
-with(my.plot.data, hist(Global_active_power, 
-                        col = "red",
-                        main = "Global Active Power",
-                        xlab = "Global Active Power (kilowatts)"))
+with(my.plot.data, 
+     hist(Global_active_power, 
+          col = "red",
+          main = "Global Active Power",
+          xlab = "Global Active Power (kilowatts)"))
 
 dev.off()
